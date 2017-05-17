@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-# setting up requiered sowftware
+# setting up requiered software
 RUN apt-get -qq update
 RUN apt-get install -y -qq git && \
     apt-get install -y -qq make && \
