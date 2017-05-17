@@ -15,4 +15,4 @@ ADD https://github.com/ethereum/solidity/releases/download/v0.4.10/solc /usr/bin
 ADD https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 /usr/bin/jq
 RUN chmod +x /usr/bin/solc /usr/bin/jq
 
-ENTRYPOINT ["geth""]
+ENTRYPOINT ["geth"]
