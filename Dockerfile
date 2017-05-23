@@ -15,4 +15,13 @@ ADD https://github.com/ethereum/solidity/releases/download/v0.4.10/solc /usr/bin
 ADD https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 /usr/bin/jq
 RUN chmod +x /usr/bin/solc /usr/bin/jq
 
+# setting up Constellation
+RUN apt-get install libdb-dev libsodium-dev zlib1g-dev libtinfo-dev curl
+RUN curl -sSL https://get.haskellstack.org/ | bash && \
+    stack setup
+RUN git clone https://github.com/jpmorganchase/constellation.git
+RUN cd /constellation && \
+    stack install && \
+    cp constellation-node /usr/bin/
+
 ENTRYPOINT ["geth"]
