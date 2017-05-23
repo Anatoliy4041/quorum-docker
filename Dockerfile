@@ -22,6 +22,6 @@ RUN curl -sSL https://get.haskellstack.org/ | bash && \
 RUN git clone https://github.com/jpmorganchase/constellation.git
 RUN cd /constellation && \
     stack install && \
-    cp constellation-node /usr/bin/
+    cp /root/.local/bin/constellation-node /usr/bin/
 
 ENTRYPOINT ["geth"]
