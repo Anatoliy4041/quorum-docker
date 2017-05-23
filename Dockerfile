@@ -16,7 +16,7 @@ ADD https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 /usr/bin/
 RUN chmod +x /usr/bin/solc /usr/bin/jq
 
 # setting up Constellation
-RUN apt-get install libdb-dev libsodium-dev zlib1g-dev libtinfo-dev curl
+RUN apt-get install libdb-dev libsodium-dev zlib1g-dev libtinfo-dev curl -y -qq
 RUN curl -sSL https://get.haskellstack.org/ | bash && \
     stack setup
 RUN git clone https://github.com/jpmorganchase/constellation.git
